@@ -1,1 +1,9 @@
-
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: white;
+  color: black;
+}
+nav a {
+  margin-right: 10px;
+}
