@@ -1,12 +1,13 @@
+function getUsers(){
+  return JSON.parse(localStorage.getItem("users")) || {};
+}
+
 function register() {
   const email = emailInput();
   const password = passwordInput();
 
   const users = getUsers();
-  if (users[email]){
-    alert("Account already exists");
-    return;
-  }
+  if (users[email]) return alert("An account with this email already exists");
 
   users[email] = password;
   localStorage.setItem("users", JSONstringify(users));
@@ -14,12 +15,22 @@ function register() {
 }
 
 function login(){
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  if (email && password){
-    localStorage.setItem("user",email);
-    alert("Login successful");
-  } else {
-    alert("please enter email and password");
+  const email = emailInput();
+  const password = passwordInput();
+  const users = getUsers();
+  if (users[email] == password){
+    localStorage.setItem("currentUser",email);
+    window.location.href = "course.html";
+  } else{
+    alert("Invalid login");
+    
+  }
 }
+function emailInput(){
+  return document.getElementById("email").value;
+}
+function passwordInput(){
+  return document.getElementById("password").value;
+}
+
+
