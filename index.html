@@ -1,23 +1,18 @@
 <! DOCTYPE html>
-<html lang = "en">
-  <head>
-    <meta charset = "UTF-8">
-    <title>SignPro Home</title>
-    <link rel ="stylesheet" href= "style.css">
-  </head>
-  <body>
-    <header> 
-      <h1> SignPro</h1>   
-      <nav>
-      <button id = "homeBtn">Home</button>
-      <button id = "learnBtn">Learn</button>
-      <button id = "practiceBtn">Practice</button>
-      <button id = "progressBtn">Progress</button>
-      </nav>
-    </header>
-    <main id ="main-content">
-      
-    </main>
-    <script src="script.js"></script>
-  </body>
+<html>
+<head>
+  <title>SignPro Home</title>
+  <link rel ="stylesheet" href= "style.css">
+</head>
+<body>
+  <h1> SignPro</h1>
+  <input id ="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button onlick = "login()">Log in</button>
+  <button onclick="register()">Register</button>
+
+  <script src="auth.js"></script>
+    
+
+</body>
 </html>
