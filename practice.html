@@ -1,8 +1,25 @@
-<body onload="checkSession()">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload ="checkSession()">
 <h2>Practice</h2>
-<div id = "quiz"></div>
-<button onclick ="submit()">Submit</button>
-
-<script src = "app.js"></script>
-<script src = "practice.js"></script>
-</body>
+<p id="questionCounter"></p>
+<iframe
+  id="signFrame"
+  width="100%"
+  height="320"
+  loading="lazy">
+</iframe>
+<div id="questionArea"></div>
+<button onclick="submitAnswer()">Submit</button>
+<p id = "feedback"></p>
+<p class="credit">
+  All signs used are from UCL's SignBank
+</p>
+<script src="app.js"></script>
+<script src="practice.js"></script>
+</body>  
+</html>
