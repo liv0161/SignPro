@@ -17,7 +17,6 @@ function login() {
  if (users[email] === password) {
    localStorage.setItem("currentUser", email);
   alert("Login successful");
-   window.location.href = "course.html";
  } else {
    alert("Invalid login");
  }
