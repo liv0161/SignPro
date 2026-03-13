@@ -1,27 +1,28 @@
 function getUsers() {
+  return JSON.parse(localStorage.getItem("users")) || {};
 }
-return JSON.parse(localStorage.getItem("users")) || {};
-4 function register() {
-const email = emailInput();
-const password = passwordInput();
-const users = getUsers();
+function register() {
+  const email = emailInput();
+  const password = passwordInput();
+  const users = getUsers();
+  if (users [email]) return alert("User already exists"); users [email] = password;
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("Account created");
 }
-if (users [email]) return alert("User already exists"); users [email] = password;
-localStorage.setItem("users", JSON.stringify(users));
-alert("Account created");
 function login() {
-const email = emailInput();
-const password = passwordInput();
-const users = getUsers();
-if (users[email] === password) {
-localStorage.setItem("currentUser", email);
-alert("Login successful");
-} else {
-alert("Invalid login");
+  const email = emailInput();
+  const password = passwordInput();
+  const users = getUsers();
+  if (users[email] === password) {
+  localStorage.setItem("currentUser", email);
+  alert("Login successful");
+  } else {
+    alert("Invalid login");
+  }
 }
 function emailInput() {
-return document.getElementById("email").value;
+  return document.getElementById("email").value;
 }
 function passwordInput() {
-return document.getElementById("password").value;
+  return document.getElementById("password").value;
 }
