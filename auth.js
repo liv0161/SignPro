@@ -4,12 +4,6 @@ function getUsers() {
 function saveUsers(users) {
  localStorage.setItem("users",JSON.stringify(users));
 }
-function showMessage(msg, color="black"){
- const m = document.getElementById("message");
- m.innerText = msg;
- m.style.color = color;
-}
-
 function validateEmail(email){
  const emailPattern = 
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -26,11 +20,11 @@ async function register() {
  const email = document.GetElementById("regEmail").value.trim();;
  const password = document.getElemntById("regPassword").value;
  if (!validateEmail(email)){
-  showMessage("Invalid email format. please try again.","red");
+  alert("Invalid email format. please try again.");
   return;
  }
 if (!validatePassword(password)){
- showMessage("Password must be at least 8 characters and contain a number. please try again", "red");
+ alert("Password must be at least 8 characters and contain a number. please try again");
  return;
 }
  const users = getUsers();
@@ -44,7 +38,7 @@ async function login() {
  const password = document.getElementById("loginPassword").value;
  const users = getUsers();
  if (!users[email]){
-  showMessage("No account was found with this email- please register","red");
+  alert("No account was found with this email- please register");
   return;
  }
  if (users[email] === password) {
