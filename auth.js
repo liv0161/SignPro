@@ -1,56 +1,27 @@
 function getUsers() {
- return JSON.parse(localStorage.getItem("users")) || {};
 }
-function saveUsers(users) {
- localStorage.setItem("users",JSON.stringify(users));
+return JSON.parse(localStorage.getItem("users")) || {};
+4 function register() {
+const email = emailInput();
+const password = passwordInput();
+const users = getUsers();
 }
-function validateEmail(email){
- const emailPattern = 
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
- return emailPattern.test(email);
-}
-function validatePassword(password) {
- if (password.length <8) return false;
- const hasNumber = /\d/;
- const hasLetter = /[a-zA-Z]/;
- return hasNumber.test(passowrd) && hasLetter.test(password);
-}
-
-async function register() {
- const email = document.GetElementById("regEmail").value.trim();;
- const password = document.getElemntById("regPassword").value;
- if (!validateEmail(email)){
-  alert("Invalid email format. please try again.");
-  return;
- }
-if (!validatePassword(password)){
- alert("Password must be at least 8 characters and contain a number. please try again");
- return;
-}
- const users = getUsers();
- if (users[email]) return alert("User already exists");
- users[email] = password;
- localStorage.setItem("users", JSON.stringify(users));
- alert("Account created");
-}
-async function login() {
- const email = document.getElementById("loginEmail").value.trim();
- const password = document.getElementById("loginPassword").value;
- const users = getUsers();
- if (!users[email]){
-  alert("No account was found with this email- please register");
-  return;
- }
- if (users[email] === password) {
-   localStorage.setItem("currentUser", email);
-  alert("Login successful");
- } else {
-   alert("Invalid login");
- }
+if (users [email]) return alert("User already exists"); users [email] = password;
+localStorage.setItem("users", JSON.stringify(users));
+alert("Account created");
+function login() {
+const email = emailInput();
+const password = passwordInput();
+const users = getUsers();
+if (users[email] === password) {
+localStorage.setItem("currentUser", email);
+alert("Login successful");
+} else {
+alert("Invalid login");
 }
 function emailInput() {
- return document.getElementById("email").value;
+return document.getElementById("email").value;
 }
 function passwordInput() {
- return document.getElementById("password").value;
+return document.getElementById("password").value;
 }
