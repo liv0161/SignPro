@@ -30,28 +30,8 @@ async function login() {
   const password = document.getElementById("loginPassword").value;
   const users = getUsers();
   if (!users[email]) return alert("No account found with this email. Pease try again.");
-  if (users[email] === password) { 
-
-   localStorage.setItem("currentUser", email); 
-
-  alert("Login successful"); 
-
-} else { 
-
-   alert("Invalid login");
-
-
-  
   if (users[email] === password) {
   localStorage.setItem("currentUser", email);
-  alert("Login successful");
-  } else {
-    alert("Invalid login");
+  window.location.href = "course.html";
   }
-}
-function emailInput() {
-  return document.getElementById("email").value;
-}
-function passwordInput() {
-  return document.getElementById("password").value;
 }
