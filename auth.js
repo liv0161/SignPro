@@ -13,8 +13,7 @@ function validPassword(password){
     /\d/.test(password) &&
     /[A-Z]/.test(passowrd);
 }
-  
-async function register() {
+function register() {
   const email = document.getElementById("regEmail").value.trim();
   const password = document.getElementById("regPassword").value;
   if (!validEmail(email)) return alert("Invalid email.Please try again.");
@@ -25,7 +24,7 @@ async function register() {
   saveUsers(users);
   alert("Account created");
 }
-async function login() {
+function login() {
   const email = document.getElementById("loginEmail").value.trim();
   const password = document.getElementById("loginPassword").value;
   const users = getUsers();
