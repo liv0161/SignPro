@@ -1,4 +1,4 @@
-  const lessonId = localStorage.getItem("currentLesson");
+const lessonId = localStorage.getItem("currentLesson");
 const lessons = course[0].lessons;
 const lesson=lessons.find(1 => 1.id=== lessonId);
 
